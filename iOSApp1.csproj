@@ -1,6 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0-ios</TargetFramework>
+    <RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
     <OutputType>Exe</OutputType>
   </PropertyGroup>
+
+  <!--This is not working-->
+  <Target
+    Name="IncludeContent"
+    BeforeTargets="PrepareForBuild">
+
+    <ItemGroup>
+      <BundleResource Include="Hello.txt" />
+    </ItemGroup>
+  </Target>
+
+  <!--This is working
+    <ItemGroup>
+      <BundleResource Include="Hello.txt" />
+    </ItemGroup>
+  -->
 </Project>
